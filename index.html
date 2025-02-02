@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <style>
+      @font-face {
+        font-family: "Gabriola"; /* Choose a name for your font */
+
+        src: url("fonts/Gabriola.ttf") format("truetype"); /* Path to the font file */
+      }
+      body {
+        margin: 0;
+      }
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #000000;
+      }
+
+      li {
+        float: left;
+        float: inline-end;
+        margin: 20px;
+      }
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        /* padding: 14px 16px; */
+        text-decoration: none;
+        font-size: 15px;
+      }
+      li a:hover {
+        color: orangered;
+      }
+      .nav-header {
+        color: orangered;
+        text-decoration: none;
+        font-weight: bold;
+        position: absolute;
+        margin-left: 50px;
+        font-size: 50px;
+        font-family: "Trebuchet MS", sans-serif;
+      }
+      .main-img {
+        width: 100%;
+        height: 680px;
+      }
+      h1 {
+        color: orangered;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-weight: lighter;
+      }
+      .destination-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 50px;
+        margin-left: 30px;
+      }
+      .destination {
+        text-align: center;
+      }
+      .destination img {
+        width: 250px;
+        height: 200px;
+      }
+      .destination p {
+        font-size: 18px;
+        font-family: Arial, sans-serif;
+        font-weight: lighter;
+        margin-top: 10px;
+      }
+      .leaders-container {
+        width: 80%;
+        margin: auto;
+        padding: 20px;
+      }
+      h1 {
+        color: orangered;
+      }
+      p {
+        font-size: 16px;
+        color: #333;
+        max-width: 600px;
+        margin: auto;
+        text-align: center;
+        font-weight: bold;
+        font-family: Arial, sans-serif;
+      }
+      .team {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        margin-top: 30px;
+      }
+      .member {
+        text-align: center;
+      }
+      .member img {
+        width: 300px;
+        height: 500px;
+        margin-left: 50px;
+      }
+      .member h3 {
+        margin-top: 10px;
+        font-size: 18px;
+        color: #000;
+        font-family: Arial, sans-serif;
+        font-weight: lighter;
+        text-align: center;
+        margin-left: 50px;
+      }
+
+      .stats-section {
+        background-color: #022332;
+        padding: 40px 0;
+        display: flex;
+        justify-content: center;
+      }
+      .status-container {
+        width: 80%;
+        max-width: 1100px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        height: 150px;
+      }
+      .stat-item {
+        flex: 1;
+      }
+      .stat-item h2 {
+        font-size: 70px;
+        color: #ff4500;
+        margin: 0;
+      }
+      .stat-item p {
+        font-size: 15px;
+        color: #ccc;
+        margin: 5px 0 0;
+        font-weight: lighter;
+        font-family: Arial, sans-serif;
+      }
+
+      .overhead-container {
+        max-width: 900px;
+        margin: 20px auto;
+      }
+      h2 {
+        text-align: center;
+        color: orangered;
+      }
+      .reviews {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      .review-box {
+        background: white;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+        flex: 1;
+        position: relative;
+        border-bottom: 3px solid #188cff;
+      }
+      .review-box h3 {
+        color: #188cff;
+        margin-bottom: 5px;
+        text-align: center;
+      }
+      .review-box p {
+        font-size: 14px;
+        text-align: center;
+      }
+      .from {
+        color: #777;
+        margin-bottom: 10px;
+      }
+      .review-box .author {
+        margin-top: 10px;
+        font-size: 12px;
+        color: #777;
+      }
+      .more-text {
+        display: none;
+      }
+      .read-more {
+        color: #188cff;
+        cursor: pointer;
+        font-size: 14px;
+      }
+
+      h1 {
+        color: orangered;
+        text-align: center;
+        font-family: Arial, sans-serif;
+        font-weight: lighter;
+      }
+      .contact-container {
+        margin-top: 100px;
+      }
+      .input-group {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 10px;
+      }
+      .input {
+        padding: 10px;
+        width: 4px;
+        box-sizing: border-box;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+      .short {
+        width: 230px;
+        margin: 10px;
+      }
+      .long {
+        width: 490px;
+        margin: 10px;
+      }
+      input::placeholder {
+        font-size: 15px;
+      }
+      .btn-center {
+        justify-content: center;
+        align-items: center;
+        display: flex;
+      }
+      .btn {
+        color: #fff;
+        width: 240px;
+        height: 2.5rem;
+        border-radius: 10px;
+        border: none;
+        background-color: #188cff;
+        font-size: 15px;
+        font-weight: lighter;
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+      }
+
+      footer {
+        margin-top: 100px;
+        background-color: #02303a;
+        color: #ffffff;
+      }
+
+      .footer-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px 60px;
+      }
+      .footer-column {
+        margin-left: 100px;
+      }
+      .footer-bottom {
+        text-align: center;
+        background-color: #000000;
+        padding: 10px 0;
+        font-size: 12px;
+      }
+      .contact-info {
+        color: #fff;
+      }
+      .footer-bottom p {
+        color: #fff;
+        font-size: 12px;
+      }
+      footer ul {
+        background-color: transparent;
+      }
+      footer li {
+        margin: 5px;
+        float: inline-start;
+      }
+
+      /* Default styles (for large screens like desktops and laptops) */
+/* You already have these styles in your main CSS, so no need for extra media queries for large screens */
+
+/* ==================== Tablet (max-width: 1024px) ==================== */
+@media screen and (max-width: 1024px) {
+    .nav-header {
+        font-size: 40px;
+        margin-left: 30px;
+        display: none;
+    }
+
+    ul {
+        display: flex;
+        justify-content: center;
+    }
+
+    li {
+        float: none;
+        margin: 10px;
+    }
+
+    .main-img {
+        height: 500px;
+    }
+
+    .destination-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .destination img {
+        width: 220px;
+        height: 170px;
+    }
+
+    .team {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .member img {
+        width: 250px;
+        height: 400px;
+        margin-left: 0;
+    }
+
+    .member h3 {
+        margin-left: 0;
+    }
+
+    .status-container {
+        flex-wrap: wrap;
+        gap: 20px;
+        height: auto;
+    }
+
+    .review-box {
+        width: 45%;
+    }
+
+    .input-group {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .short,
+    .long {
+        width: 80%;
+    }
+
+    .footer-container{
+        width: 100%;
+    }
+    .footer-container {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .footer-column {
+        margin-left: 50px;
+        margin-bottom: 20px;
+    }
+}
+
+/* ==================== Mobile Devices (max-width: 768px) ==================== */
+@media screen and (max-width: 768px) {
+    .nav-items{
+        margin-top: 50px;
+    }
+    .nav-header {
+        font-size: 35px;
+        margin-left: 20px;
+        display: none;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        float: none;
+        margin: 10px 0;
+    }
+
+    .main-img {
+        height: 350px;
+    }
+
+    .destination-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .destination img {
+        width: 200px;
+        height: 150px;
+    }
+
+    .team {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .member img {
+        width: 200px;
+        height: 300px;
+    }
+
+    .member h3 {
+        margin-left: 0;
+    }
+
+    .status-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 20px;
+    }
+
+    .reviews {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-box {
+        width: 90%;
+    }
+
+    .input-group {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .short,
+    .long {
+        width: 90%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-column {
+        margin-left: 0;
+        margin-bottom: 20px;
+    }
+}
+
+/* ==================== Small Mobile Devices (max-width: 480px) ==================== */
+@media screen and (max-width: 480px) {
+
+    .nav-items{
+        margin-top: 50px;
+    }
+    .nav-header {
+        font-size: 28px;
+        margin-left: 10px;
+        display: none;
+    }
+
+    ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    li {
+        float: none;
+        margin: 5px 0;
+    }
+
+    .main-img {
+        height: 250px;
+    }
+
+    .destination img {
+        width: 180px;
+        height: 130px;
+    }
+
+    .member img {
+        width: 180px;
+        height: 280px;
+    }
+
+    .status-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .review-box {
+        width: 100%;
+    }
+
+    .short,
+    .long {
+        width: 100%;
+    }
+
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+}
+
+@media (max-width: 425px) {
+  .nav-header {
+    font-size: 30px;
+    margin-left: 15px;
+  }
+
+  .main-img {
+    height: 350px;
+  }
+
+  .destination img {
+    width: 180px;
+    height: 140px;
+  }
+
+  .destination p {
+    font-size: 16px;
+  }
+
+  .team {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .member img {
+    width: 120px;
+    height: 200px;
+  }
+
+  .stat-item h2 {
+    font-size: 30px;
+  }
+
+  .stat-item p {
+    font-size: 12px;
+  }
+
+  .review-box {
+    padding: 12px;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  .footer-column {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .input-group {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .input {
+    width: 100%;
+  }
+
+  .btn {
+    width: 180px;
+  }
+}
+
+
+    </style>
+  </head>
+  <body>
+    <div class="navbar">
+      <ul>
+        <a class="nav-header" href="index.html">JAY TOURS</a>
+        <div class="nav-items">
+        <li><a href="#contact">CONTACT</a></li>
+        <li><a href="#portfolio">PORTFOLIO</a></li>
+        <li><a href="#testimonials">TESTIMONIALS</a></li>
+        <li><a href="#services">SERVICES</a></li>
+        <li><a href="#about">ABOUT</a></li>
+        <li><a href="#home">HOME</a></li>
+    </div>
+      </ul>
+    </div>
+    <img src="Images/main.jpg" alt="Jay Tours" class="main-img" />
+    <h1>TOP DESTINATIONS</h1>
+    <div class="destination-container">
+      <div class="destination">
+        <p>SRI LANKA</p>
+        <img src="Images/Top Destinations/Sri Lanka.jpg" alt="Sri Lanka" />
+      </div>
+      <div class="destination">
+        <p>ROME</p>
+        <img src="Images/Top Destinations/Rome.jpg" alt="Rome" />
+      </div>
+      <div class="destination">
+        <p>MALDIVES</p>
+        <img src="Images/Top Destinations/Maldives.jpg" alt="Maldives" />
+      </div>
+      <div class="destination">
+        <p>SWITZERLAND</p>
+        <img src="Images/Top Destinations/Switzerland.jpg" alt="Switzerland" />
+      </div>
+      <div class="destination">
+        <p>THAILAND</p>
+        <img src="Images/Top Destinations/Thailand.jpg" alt="Thailand" />
+      </div>
+    </div>
+
+    <div class="leaders-container">
+      <h1>OUR TEAM LEADS</h1>
+      <p>
+        Teamwork is the ability to work together toward a common vision. The
+        ability to direct individual accomplishments toward organizational
+        objectives. It is the fuel that allows common people to attain uncommon
+        results.
+      </p>
+      <div class="team">
+        <div class="member">
+          <img src="Images/Team Leaders/Hugo Silva.jpg" alt="Hugo Silva" />
+          <h3>Hugo Silva</h3>
+        </div>
+        <div class="member">
+          <img
+            src="Images/Team Leaders/Imanoli Arias.jpg"
+            alt="Imanoli Arias"
+          />
+          <h3>Imanoli Arias</h3>
+        </div>
+        <div class="member">
+          <img
+            src="Images/Team Leaders/Javier Bardem.jpg"
+            alt="Javier Bardem"
+          />
+          <h3>Javier Bardem</h3>
+        </div>
+      </div>
+    </div>
+
+    <div class="stats-section">
+      <div class="status-container">
+        <div class="stat-item">
+          <h2 style="font-family: 'Gabriola'">250k +</h2>
+          <p>HAPPY CLIENTS</p>
+        </div>
+        <div class="stat-item">
+          <h2 style="font-family: 'Gabriola'">800</h2>
+          <p>WEEKLY RESERVATIONS</p>
+        </div>
+        <div class="stat-item">
+          <h2 style="font-family: 'Gabriola'">150</h2>
+          <p>TRAVEL PARTNERS</p>
+        </div>
+        <div class="stat-item">
+          <h2 style="font-family: 'Gabriola'">15</h2>
+          <p>BRANCHES</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="overhead-container">
+      <h2>OVERHEAD FROM TRAVELERS</h2>
+      <div class="reviews">
+        <div class="review-box">
+          <h3>Hotel Eucalyptus</h3>
+          <p class="from"><em>in Greece</em></p>
+          <p>
+            "We booked Hotel Eucalyptus through Jay after reading a handful of
+            reviews, and it was easily the best decision we made
+            <span class="more-text">- The staff was friendly, and the location was perfect. Highly recommended!</span>"
+            <span class="read-more" onclick="toggleReadMore(this)">...more</span>
+          </p>
+          <p class="author">- Joyce from Canada</p>
+        </div>
+        <div class="review-box">
+          <h3>Holiday Inn Resort Batam</h3>
+          <p class="from"><em>in Indonesia</em></p>
+          <p>
+            "Thanks Jay for letting me change room without charge and rebate the
+            difference. Nice staffs Agoda and Holiday Inn! The facilities were
+            great, and we had a comfortable stay.
+          </p>
+          <p class="author">- Andy from Singapore</p>
+        </div>
+        <div class="review-box">
+          <h3>Hotel Granvia Kyoto</h3>
+          <p class="from"><em>in Japan</em></p>
+          <p>
+            "Our family was traveling via bullet train between cities in Japan
+            with our luggage - the location for this hotel made that
+            <span class="more-text">- super convenient. The service was impeccable!</span>"
+            <span class="read-more" onclick="toggleReadMore(this)">...more</span>
+          </p>
+          <p class="author">- Diane from the United States</p>
+        </div>
+      </div>
+    </div>
+
+    <div id="contact" class="contact-container">
+      <h1>CONTACT US</h1>
+      <div class="input-group">
+        <input class="input short" type="text" placeholder="First Name" />
+        <input class="input short" type="text" placeholder="Last Name" />
+      </div>
+      <div class="input-group">
+        <input class="input long" type="email" placeholder="E-mail" />
+      </div>
+      <div class="input-group">
+        <input class="input long" type="tel" placeholder="Phone Number" />
+      </div>
+      <p>
+        <input value="blue" type="checkbox" name="color" /> Subscribe to our
+        newsletter
+      </p>
+      <div class="btn-center"><button class="btn">SIGN IN</button></div>
+    </div>
+
+    <footer>
+      <div class="footer-container">
+        <div class="footer-column">
+          <h3>HELP</h3>
+          <ul>
+            <li><a href="#">Help Center</a></li>
+            <br />
+            <li><a href="#">FAQs</a></li>
+            <br />
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>ABOUT US</h3>
+          <ul>
+            <li><a href="#">Blog</a></li>
+            <br />
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>DESTINATIONS</h3>
+          <ul>
+            <li><a href="#">Countries</a></li>
+            <br />
+            <li><a href=""></a></li>
+            <br />
+            <li><a href="#">Cities</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>PARTNER WITH US</h3>
+          <ul>
+            <li><a href="#">Properties</a></li>
+            <br />
+            <li><a href=""></a></li>
+            <br />
+            <li><a href="#">Affiliates</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <ul>
+            <li>
+              <i
+                class="fa-solid fa-phone"
+                style="
+                  color: #ff4500;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              ></i
+              ><br />
+              +94 112 875 965<br />
+              +94 115 879 568
+            </li>
+            <br />
+            <li>
+              <i
+                class="fa-solid fa-location-dot"
+                style="
+                  color: #ff4500;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                "
+              ></i
+              ><br />
+              No.056,<br />
+              Havelock Town,<br />Colombo 05,<br />
+              Sri Lanka
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Copyright © 2020 - SLIIT WEB DEVELOPMENT - All rights reserved</p>
+      </div>
+    </footer>
+    <script>
+      function toggleReadMore(element) {
+        let moreText = element.previousElementSibling;
+        if (
+          moreText.style.display === "none" ||
+          moreText.style.display === ""
+        ) {
+          moreText.style.display = "inline";
+          element.textContent = " Show less";
+        } else {
+          moreText.style.display = "none";
+          element.textContent = "...more";
+        }
+      }
+    </script>
+  </body>
+</html>
